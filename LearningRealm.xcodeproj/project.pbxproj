@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FE51FF8BAFD9AFC7E79A3E4 /* Pods_LearningRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1A3FEAD97BD0A47F3CDDEC /* Pods_LearningRealm.framework */; };
 		CAEFEFD1220E964E00F98302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFEFD0220E964E00F98302 /* AppDelegate.swift */; };
 		CAEFEFD3220E964E00F98302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFEFD2220E964E00F98302 /* ViewController.swift */; };
 		CAEFEFD6220E964E00F98302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAEFEFD4220E964E00F98302 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E1A3FEAD97BD0A47F3CDDEC /* Pods_LearningRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AD9D28587EA582F11D3176C /* Pods-LearningRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningRealm.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearningRealm/Pods-LearningRealm.release.xcconfig"; sourceTree = "<group>"; };
+		9EDDFAADCAC82F440B7F4967 /* Pods-LearningRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningRealm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearningRealm/Pods-LearningRealm.debug.xcconfig"; sourceTree = "<group>"; };
 		CAEFEFCD220E964E00F98302 /* LearningRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAEFEFD0220E964E00F98302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAEFEFD2220E964E00F98302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE51FF8BAFD9AFC7E79A3E4 /* Pods_LearningRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48D8CB95166B5F112B193073 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E1A3FEAD97BD0A47F3CDDEC /* Pods_LearningRealm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6A172E88197134326B9FCE0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EDDFAADCAC82F440B7F4967 /* Pods-LearningRealm.debug.xcconfig */,
+				8AD9D28587EA582F11D3176C /* Pods-LearningRealm.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CAEFEFC4220E964D00F98302 = {
 			isa = PBXGroup;
 			children = (
 				CAEFEFCF220E964E00F98302 /* LearningRealm */,
 				CAEFEFCE220E964E00F98302 /* Products */,
+				C6A172E88197134326B9FCE0 /* Pods */,
+				48D8CB95166B5F112B193073 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAEFEFDF220E965000F98302 /* Build configuration list for PBXNativeTarget "LearningRealm" */;
 			buildPhases = (
+				9934AD0212D7EE17E3D1F9DD /* [CP] Check Pods Manifest.lock */,
 				CAEFEFC9220E964E00F98302 /* Sources */,
 				CAEFEFCA220E964E00F98302 /* Frameworks */,
 				CAEFEFCB220E964E00F98302 /* Resources */,
+				AD276189C47023040924937B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9934AD0212D7EE17E3D1F9DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LearningRealm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD276189C47023040924937B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LearningRealm/Pods-LearningRealm-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LearningRealm/Pods-LearningRealm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CAEFEFC9220E964E00F98302 /* Sources */ = {
@@ -280,6 +355,7 @@
 		};
 		CAEFEFE0220E965000F98302 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EDDFAADCAC82F440B7F4967 /* Pods-LearningRealm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +374,7 @@
 		};
 		CAEFEFE1220E965000F98302 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AD9D28587EA582F11D3176C /* Pods-LearningRealm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
